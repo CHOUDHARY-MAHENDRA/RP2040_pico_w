@@ -1,8 +1,9 @@
 import time
 import network
 
-ssid = 'ECB_TEQIP'
-password = ''
+ 
+ssid = 'vivo Y100A'    # enter your ssid 
+password = 'zxcvbnm12'  # enter password
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
@@ -21,8 +22,11 @@ while max_wait > 0:
 if wlan.status() != 3:
     raise RuntimeError('network connection failed')
 else:
+#while True: 
     print('connected')
     status = wlan.ifconfig()
     print( 'ip = ' + status[0] )
+    time.sleep(10)
+
     
     

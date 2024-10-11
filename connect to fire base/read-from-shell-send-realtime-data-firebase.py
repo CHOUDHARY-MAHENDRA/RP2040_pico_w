@@ -5,6 +5,7 @@ import ujson
 import urequests
 
 # Replace with your own credentials
+ 
 ssid = '.......'    # enter your ssid 
 password = '......'  # enter password
 

@@ -4,11 +4,13 @@ import time
 import json
 
 # Replace these with your Firebase URL and Wi-Fi credentials
-FIREBASE_URL = "https://home-automation-35494-default-rtdb.firebaseio.com/DATA/temp.json"  # Add the .json extension for Realtime DB
-#WIFI_SSID = "ECB_TEQIP"
-#WIFI_PASSWORD = ""
-WIFI_SSID ="vivo Y100A";
-WIFI_PASSWORD = "zxcvbnm12";
+ssid = '.......'    # enter your ssid 
+password = '......'  # enter password
+
+
+FIREBASE_URL = 'https://.....'   # adderess of realtime database where store data
+
+API_KEY = ''  # api key
 # Connect to Wi-Fi
 def connect_to_wifi():
     wlan = network.WLAN(network.STA_IF)
@@ -36,11 +38,14 @@ def send_data_to_firebase(data):
 # Main loop
 def main(): 
     connect_to_wifi()
-    
+    total_sqr_fit = input("Enter Total sqre feet    : ")
+    bath = input("Enter bath    : ")
+    bhk = input("Enter bhk    : ")
     # Example data 
     data = { 
-        "sensor_value": 25,
-        "timestamp": time.time()
+        "Total_sqr_fit": total_sqr_fit,
+        "bath": bath,
+        "bhk": bhk
     }
     
     # Send the data 
