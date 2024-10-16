@@ -1,18 +1,22 @@
 import network
-import socket
+#import socket
 import time
 import ujson
 import urequests
 
 # Replace with your own credentials
  
-ssid = '.......'    # enter your ssid 
-password = '......'  # enter password
+#SSID = 'ECB_TQIP'    # enter your ssid 
+#PASSWORD = ''  # enter password
+SSID= "DESKTOP-BNCF5UR 5862"
+PASSWORD = "123456789"
 
+#FIREBASE_URL = 'https://database-krashak-default-rtdb.firebaseio.com/soil_samples/'   # p  # adderess of realtime database where store data
+FIREBASE_URL = "https://fir-e81d4-default-rtdb.firebaseio.com/"   #m
 
-FIREBASE_URL = 'https://.....'   # adderess of realtime database where store data
+#API_KEY = 'AIzaSyAhlS6xuYbHeUu4cQ116sGeuIJvG1CYKJQ' # p # api key
+API_KEY ="AIzaSyCkbnwQwA8Ly6yGW-kxBxNzoH7lxQLzWb4"  # m
 
-API_KEY = ''  # api key
 # Connect to Wi-Fi
 def connect_wifi():
     wlan = network.WLAN(network.STA_IF)
@@ -41,27 +45,32 @@ def get_data(path):
     response.close()
 
 # Main function
-def main():
+def main(i):
    
-    total_sqr_fit = int(input("Enter Total sqre feet    : "))
-    bath =int( input("Enter bath    : "))
-    bhk = int(input("Enter bhk    : "))
-    # Example data 
-    data = { 
-        "Total_sqr_fit": total_sqr_fit,
-        "bath": bath,
-        "bhk": bhk
-    }   
+    ID = int(input("Enter id    : "))
+    name = input("Enter name    : ")
+    phone = input("Enter phone    : ")
+    ph = int(input("Enter phosphorus    : "))
+       # Example data 
+    data =    {
+        "id": ID,
+        "name": name,
+        "phone": phone,
+        "phosphorus": ph
+    }
+
     
+
     # Example data to send
     #data_to_send = {'temperature': 2, 'humidity': 60}
-    send_data('sensors', data)
+    send_data(f'{i}', data)
     
     # Retrieve the data back
-    get_data('sensors')
-    print(f"sensor")
+    get_data(f'{i}')
+    print(f"soil_samples{i}")
     
 connect_wifi()
+i=1
 # Run the main function
-while True:
-    main()   
+#while TRUE:
+main(i)

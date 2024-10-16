@@ -55,7 +55,7 @@ def main():
     # Example data to send
     #data_to_send = {'temperature': 2, 'humidity': 60}
     send_data('sensors', data)
-    
+     
     # Retrieve the data back
     get_data('sensors')
     print(f"sensor")
