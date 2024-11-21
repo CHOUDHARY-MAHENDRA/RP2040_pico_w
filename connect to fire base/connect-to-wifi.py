@@ -2,8 +2,8 @@ import time
 import network
 
  
-ssid = 'vivo Y100A'    # enter your ssid 
-password = 'zxcvbnm12'  # enter password
+ssid = '....'    # enter your ssid 
+password = '...'  # enter password
 
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
